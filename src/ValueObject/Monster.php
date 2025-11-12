@@ -34,4 +34,8 @@ class Monster
     {
         $this->hp -= $hp;
     }
+    public function heavydmg(int $heavydmg): void
+    {
+        $this->hp -= $heavydmg;
+    }
 }

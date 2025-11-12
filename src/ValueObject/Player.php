@@ -25,4 +25,13 @@ class Player
     {
         $this->hp = $hp;
     }
+    public function heal(int $heal): void
+    {
+        $this->hp += $heal;
+    }
+    public function run(int $rundmg): void
+    {
+        $this->hp -= $rundmg;
+    }
+
 }

@@ -49,13 +49,30 @@ class GameController extends AbstractController
         }
 
         switch ($actionName) {
+
             case ActionType::ATTACK->value:
                 $dmg = DmgHelper::calculateDamage(8,18);
                 $state->getMonster()->takeDmg($dmg);
                 break;
 
-            case ActionType::HEAL->value:
+
+            case ActionType::HEAVY->value:
+                $heavydmg = DmgHelper::calculateHeavyDamage(20,40);
+                $state->getMonster()->heavyDmg($heavydmg);
                 break;
+
+
+            case ActionType::HEAL->value:
+                $heal = 40;
+                $state->getPlayer()->heal($heal);
+                break;
+
+            case ActionType::RUN->value:
+                $run = DmgHelper::calculateRunDamage(0,5);
+                $state->getPlayer()->run($run);
+
+                break;
+
 
 
             default:

@@ -17,4 +17,20 @@ class DmgHelper
     {
         return random_int($minDmg, $maxDmg);
     }
+
+    /**
+     * @throws RandomException
+     */
+    public static function calculateHeavyDamage(int $minHeavyDmg, int $maxHeavyDmg): int
+    {
+        return random_int($minHeavyDmg, $maxHeavyDmg);
+    }
+
+    /**
+     * @throws RandomException
+     */
+    public static function calculateRunDamage(int $minRunDamage, int $maxRunDamage): int
+    {
+        return random_int($minRunDamage, $maxRunDamage);
+    }
 }
