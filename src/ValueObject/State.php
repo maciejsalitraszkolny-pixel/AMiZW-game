@@ -15,7 +15,7 @@ class State
         private readonly int $gold,
         private readonly int $healsLeft,
         private bool $over,
-        private readonly array $log)
+        private array $log)
     {
     }
 
@@ -52,6 +52,10 @@ class State
     public function getLog(): array
     {
         return $this->log;
+    }
+    public function addLog(string $log): void
+    {
+        $this->log[]=$log;
     }
 
     public function nextWave(): void

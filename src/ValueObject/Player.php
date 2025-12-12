@@ -8,7 +8,14 @@ namespace App\ValueObject;
 
 class Player
 {
-    public function __construct(private int $hp)
+    public const LEVEL = [
+        1 => 100,
+        2 => 250,
+        3 => 500,
+        4 => 1100,
+        5 => 2500
+    ];
+    public function __construct(private int $hp, private int $level, private int $experience)
     {
     }
 
@@ -24,5 +31,25 @@ class Player
     public function setHp(int $hp): void
     {
         $this->hp = $hp;
+    }
+    public function setHeal(int $hp): void
+    {
+        $this->hp += $hp;
+    }
+    public function run(): void
+    {
+        $this->hp -= 10;
+    }
+    public function addExperience(int $exp): void 
+    {
+        $this->experience += $exp;
+    }
+    public function levelUp(): void 
+    {
+        $this->level++;
+    }
+    public function getExp(): int
+    {
+        return $this->experience;
     }
 }
